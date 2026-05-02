@@ -1,0 +1,284 @@
+/* ============================================================
+   MHDA Advocacia — Foundations: Colors + Typography
+   ------------------------------------------------------------
+   A serious, conservative law firm (cível, trabalhista,
+   previdenciário) serving individuals. Visual tone is calm,
+   trustworthy, slightly traditional, with a single warm accent.
+   ============================================================ */
+
+/* ---------- Web fonts (Google Fonts substitutes) ----------- */
+/* SUBSTITUTION FLAG: original logo uses a custom geometric
+   sans (display) — closest free pairing is Manrope (display)
+   for its slightly humanist proportions, and Source Serif 4
+   for long-form copy and quotations.                          */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap');
+
+:root {
+  /* ============================================================
+     BRAND COLORS (sampled from official logo)
+     ============================================================ */
+  --mhda-navy:       #103050;   /* primary brand, sampled exact   */
+  --mhda-terracotta: #B06038;   /* accent, sampled exact          */
+
+  /* Navy scale ------------------------------------------------- */
+  --navy-950: #08182A;          /* near-black hero backgrounds    */
+  --navy-900: #0B2138;
+  --navy-800: #103050;          /* === brand primary ===          */
+  --navy-700: #1B4068;
+  --navy-600: #2A5683;
+  --navy-500: #406F9D;
+  --navy-400: #6B91B7;
+  --navy-300: #9DB6CE;
+  --navy-200: #C7D5E2;
+  --navy-100: #E3EAF1;
+  --navy-50:  #F2F5F8;
+
+  /* Terracotta scale ------------------------------------------ */
+  --terra-900: #6E3A1F;
+  --terra-800: #8C4A2A;
+  --terra-700: #9D5532;
+  --terra-600: #B06038;          /* === brand accent ===          */
+  --terra-500: #C07953;
+  --terra-400: #D19878;
+  --terra-300: #E2BAA1;
+  --terra-200: #EFD5C5;
+  --terra-100: #F7E8DD;
+  --terra-50:  #FBF3EE;
+
+  /* Neutrals (warm, slightly off-white — paper feel) --------- */
+  --paper:      #FAF7F2;        /* page background, warm cream    */
+  --paper-alt:  #F2EEE6;        /* alt section bg                 */
+  --bone:       #E8E2D5;        /* divider on cream               */
+  --ink-900:    #14181D;        /* primary text on light          */
+  --ink-700:    #2C333B;        /* body                           */
+  --ink-500:    #5B6470;        /* secondary                      */
+  --ink-400:    #8A93A0;        /* tertiary / captions            */
+  --ink-300:    #B5BCC7;        /* disabled / hairlines           */
+  --ink-200:    #D8DCE3;        /* borders                        */
+  --ink-100:    #EDEFF3;        /* surface alt                    */
+  --white:      #FFFFFF;
+
+  /* Semantic FG / BG ----------------------------------------- */
+  --bg-1:       var(--paper);
+  --bg-2:       var(--paper-alt);
+  --bg-3:       var(--white);
+  --bg-inverse: var(--navy-800);
+
+  --fg-1:       var(--navy-800);   /* headlines, brand voice  */
+  --fg-2:       var(--ink-900);    /* body                    */
+  --fg-3:       var(--ink-500);    /* secondary               */
+  --fg-4:       var(--ink-400);    /* tertiary / captions     */
+  --fg-on-dark: #F4F1EB;
+
+  --accent:        var(--terra-600);
+  --accent-hover:  var(--terra-700);
+  --accent-press:  var(--terra-800);
+
+  --border-1: var(--ink-200);
+  --border-2: var(--bone);
+  --rule:     #1B4068;             /* navy hairline on cream  */
+
+  /* Status colors (legal-tone — muted, not loud) ------------- */
+  --success: #2F6B4F;
+  --warning: #B8862E;
+  --danger:  #8C2E2A;
+  --info:    var(--navy-700);
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+  --font-display: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans:    'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif:   'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  --font-mono:    ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale (1.25 — major third, restrained) -------------- */
+  --fs-display:  clamp(48px, 6vw, 88px);
+  --fs-h1:       clamp(36px, 4.4vw, 56px);
+  --fs-h2:       clamp(28px, 3.2vw, 40px);
+  --fs-h3:       24px;
+  --fs-h4:       20px;
+  --fs-body-lg:  18px;
+  --fs-body:     16px;
+  --fs-small:    14px;
+  --fs-caption:  12px;
+  --fs-eyebrow:  11px;            /* uppercased labels */
+
+  /* Line heights -------------------------------------------- */
+  --lh-tight:   1.08;
+  --lh-snug:    1.2;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.65;
+
+  /* Tracking ------------------------------------------------ */
+  --tr-tight:   -0.02em;
+  --tr-normal:  0;
+  --tr-wide:    0.06em;
+  --tr-eyebrow: 0.22em;            /* matches "ADVOCACIA" in logo */
+
+  /* Weights ------------------------------------------------- */
+  --fw-light: 300;
+  --fw-reg:   400;
+  --fw-med:   500;
+  --fw-sb:    600;
+  --fw-bold:  700;
+  --fw-black: 800;
+
+  /* ============================================================
+     SPACING (4px base)
+     ============================================================ */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  /* Radii — restrained, mostly square --------------------- */
+  --r-0: 0;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-3: 6px;
+  --r-4: 10px;
+  --r-pill: 999px;
+
+  /* Shadows — soft, never hot ----------------------------- */
+  --shadow-1: 0 1px 2px rgba(16, 48, 80, 0.06), 0 1px 1px rgba(16, 48, 80, 0.04);
+  --shadow-2: 0 2px 6px rgba(16, 48, 80, 0.08), 0 1px 2px rgba(16, 48, 80, 0.05);
+  --shadow-3: 0 8px 24px rgba(16, 48, 80, 0.10), 0 2px 6px rgba(16, 48, 80, 0.06);
+  --shadow-4: 0 20px 48px rgba(16, 48, 80, 0.14), 0 4px 12px rgba(16, 48, 80, 0.08);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  /* Motion ------------------------------------------------- */
+  --ease-out:  cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 0.7, 0.3);
+  --ease-std:  cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 520ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   ============================================================ */
+
+.eyebrow,
+[data-style="eyebrow"] {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-med);
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.display,
+h1.display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+}
+
+.h1, h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+}
+
+.h2, h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+
+.h3, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-sb);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+.h4, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-med);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+/* serif lead — used on hero supporting copy and pull quotes */
+.lead {
+  font-family: var(--font-serif);
+  font-weight: var(--fw-reg);
+  font-style: italic;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-3);
+}
+
+.body, p {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.body-lg {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+}
+
+.small, small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
+  color: var(--fg-3);
+}
+
+.caption {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.02em;
+  color: var(--fg-4);
+}
+
+.serif-quote {
+  font-family: var(--font-serif);
+  font-weight: var(--fw-reg);
+  font-style: italic;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+/* Brand divider — vertical hairline reproducing the logo's    */
+.brand-divider {
+  display: inline-block;
+  width: 1px;
+  height: 1.4em;
+  background: currentColor;
+  opacity: 0.4;
+  vertical-align: middle;
+  margin: 0 var(--sp-4);
+}
+
+/* The signature dot — tiny terracotta period after a wordmark  */
+.brand-dot::after {
+  content: ".";
+  color: var(--accent);
+}
