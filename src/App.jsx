@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Icon } from "./icons.jsx";
 
 const WHATSAPP_URL =
-  "https://wa.me/5511967075293?text=Ol%C3%A1%2C%20vamos%20conversar%3F";
+  "https://wa.me/5511967075293?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 const WHATSAPP_HREF = "https://wa.me/5511967075293";
 const PHONE_DISPLAY = "(11) 96707-5293";
 const EMAIL = "minharrosabrina@gmail.com";
@@ -54,7 +54,7 @@ function Header() {
       </nav>
       <a className="cta" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
         <Icon.whatsapp size={16} />
-        <span className="cta-label">Vamos conversar</span>
+        <span className="cta-label">Falar com um advogado</span>
       </a>
     </header>
   );
@@ -65,6 +65,8 @@ function Hero() {
     <section className="hero" id="inicio">
       <div className="container">
         <div className="hero-eyebrow-row reveal">
+          <span>Escritório de advocacia</span>
+          <span className="vr"></span>
           <span className="meta">Civil · Trabalhista · Previdenciário</span>
         </div>
         <h1 className="reveal">
@@ -78,15 +80,12 @@ function Hero() {
           <div className="hero-actions">
             <a className="btn btn-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
               <Icon.whatsapp size={18} />
-              Falar no WhatsApp
+              Falar com um advogado
             </a>
             <a className="btn btn-ghost" href="#areas">
               Conhecer áreas →
             </a>
           </div>
-          <p className="hero-reply">
-            <span className="hero-reply-dot" /> Resposta em até 24 horas
-          </p>
         </div>
       </div>
     </section>
@@ -160,7 +159,7 @@ const PILLARS = [
   { n: "01", title: "Atenção integral", body: "Você fala diretamente com o advogado responsável pelo seu caso, do primeiro contato ao desfecho." },
   { n: "02", title: "Linguagem que se entende", body: "Sem juridiquês desnecessário. Explicamos o passo a passo, os prazos e o que esperar de cada decisão." },
   { n: "03", title: "Honorários claros", body: "Tudo combinado por escrito antes de começar. Sem taxas surpresa, sem cobranças inesperadas." },
-  { n: "04", title: "Atendimento próximo", body: "Presencial em Jundiaí ou por videochamada — onde for melhor para você. Resposta em até 24 horas." },
+  { n: "04", title: "Atendimento próximo", body: "Presencial em Jundiaí ou por videochamada — onde for melhor para você." },
 ];
 
 function Pillars() {
@@ -291,7 +290,7 @@ function Blog() {
 
 function Location() {
   const mapSrc =
-    "https://www.google.com/maps?q=Avenida%20Vitorio%20Baradel%2C%20445%2C%20Jundia%C3%AD%20-%20SP%2C%20Brasil&output=embed&z=16";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.4797670286341!2d-46.857779624432965!3d-23.246031963074092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf20571ee8e8ed%3A0xbf0ce6805a8a8459!2sAv.%20Vict%C3%B3rio%20Baradel%2C%20445%20-%20Jardim%20Santa%20Gertrudes%2C%20Jundia%C3%AD%20-%20SP%2C%2013205-260!5e0!3m2!1spt-BR!2sbr!4v1777772488567!5m2!1spt-BR!2sbr";
   return (
     <section className="section" id="localizacao">
       <div className="container">
@@ -307,7 +306,7 @@ function Location() {
             <dl>
               <dt>Endereço</dt>
               <dd>
-                Avenida Vitorio Baradel, 445<br />
+                Avenida Victório Baradel, 445<br />
                 Jundiaí — SP
               </dd>
               <dt>Atendimento online</dt>
@@ -330,13 +329,13 @@ function Location() {
           <div className="map-wrap reveal">
             <iframe
               src={mapSrc}
-              title="Mapa — Av. Vitorio Baradel, 445, Jundiaí"
+              title="Mapa — Av. Victório Baradel, 445, Jundiaí"
               loading="lazy"
             ></iframe>
             <div className="map-overlay">
               <strong>MHDA Advocacia</strong>
               <span>
-                Av. Vitorio Baradel, 445<br />
+                Av. Victório Baradel, 445<br />
                 Jundiaí — SP
               </span>
             </div>
@@ -353,19 +352,17 @@ function Contact() {
       <div className="container">
         <div className="contact-hero reveal">
           <p className="eyebrow">Contato</p>
-          <h2>Vamos conversar pelo WhatsApp.</h2>
+          <h2>Fale com um advogado.</h2>
           <p className="contact-lead">
-            Conte rapidamente o seu caso. Garantimos retorno em até 24 horas — pessoalmente, por telefone ou por videochamada.
+            Conte rapidamente o seu caso pelo WhatsApp. Atendemos pessoalmente em Jundiaí, por telefone ou por videochamada — onde for melhor para você.
           </p>
           <a className="btn btn-whatsapp btn-whatsapp-big" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
             <Icon.whatsapp size={24} />
-            Falar agora pelo WhatsApp
+            Falar com um advogado
           </a>
           <p className="contact-phone">
             <span className="hero-reply-dot" />
             <a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a>
-            <span className="contact-phone-sep">·</span>
-            <span className="contact-phone-meta">Resposta em até 24 horas</span>
           </p>
         </div>
 
@@ -373,7 +370,7 @@ function Contact() {
           <div className="channel">
             <p className="channel-label">Endereço</p>
             <p className="channel-value">
-              Avenida Vitorio Baradel, 445<br />
+              Avenida Victório Baradel, 445<br />
               Jundiaí — SP
             </p>
           </div>
@@ -437,7 +434,7 @@ function Footer() {
             <ul>
               <li><a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a></li>
               <li><a href={"mailto:" + EMAIL}>{EMAIL}</a></li>
-              <li><a>Av. Vitorio Baradel, 445 — Jundiaí/SP</a></li>
+              <li><a>Av. Victório Baradel, 445 — Jundiaí/SP</a></li>
             </ul>
           </div>
         </div>
@@ -459,14 +456,13 @@ function WhatsAppFAB() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Conversar pelo WhatsApp — resposta em até 24 horas"
+      aria-label="Falar com um advogado pelo WhatsApp"
     >
       <span className="wa-fab-icon">
         <Icon.whatsapp size={30} />
       </span>
       <span className="wa-fab-text">
-        <span className="wa-fab-strong">Vamos conversar</span>
-        <span className="wa-fab-sub">Resposta em até 24h</span>
+        <span className="wa-fab-strong">Falar com um advogado</span>
       </span>
     </a>
   );
