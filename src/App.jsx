@@ -348,86 +348,58 @@ function Location() {
 }
 
 function Contact() {
-  const [sent, setSent] = useState(false);
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-  };
   return (
-    <section className="section section-dark" id="contato" style={{ background: "var(--navy-900)" }}>
+    <section className="section contact-section" id="contato">
       <div className="container">
-        <div className="section-head reveal">
+        <div className="contact-hero reveal">
           <p className="eyebrow">Contato</p>
-          <h2>Resposta em até 24 horas.</h2>
-          <p style={{ color: "rgba(244,241,235,0.75)" }}>
-            Conte rapidamente o seu caso pelo WhatsApp ou pelo formulário abaixo. Garantimos retorno em até 24 horas — pessoalmente, por telefone ou por videochamada.
+          <h2>Vamos conversar pelo WhatsApp.</h2>
+          <p className="contact-lead">
+            Conte rapidamente o seu caso. Garantimos retorno em até 24 horas — pessoalmente, por telefone ou por videochamada.
           </p>
           <a className="btn btn-whatsapp btn-whatsapp-big" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-            <Icon.whatsapp size={22} />
+            <Icon.whatsapp size={24} />
             Falar agora pelo WhatsApp
           </a>
+          <p className="contact-phone">
+            <span className="hero-reply-dot" />
+            <a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a>
+            <span className="contact-phone-sep">·</span>
+            <span className="contact-phone-meta">Resposta em até 24 horas</span>
+          </p>
         </div>
-        <div className="contact-grid">
-          <div className="contact-info reveal">
-            <dl>
-              <dt>Endereço</dt>
-              <dd>
-                Avenida Vitorio Baradel, 445<br />
-                Jundiaí — SP
-              </dd>
-              <dt>Atendimento online</dt>
-              <dd>Em todo o Brasil, por videochamada</dd>
-              <dt>WhatsApp</dt>
-              <dd>
-                <a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a>
-              </dd>
-              <dt>E-mail</dt>
-              <dd>
-                <a href={"mailto:" + EMAIL}>{EMAIL}</a>
-              </dd>
-              <dt>Horário</dt>
-              <dd>Segunda a sexta, 9h às 18h</dd>
-              <dt>OAB</dt>
-              <dd>OAB/SP 385.279</dd>
-            </dl>
-          </div>
-          <form className="contact-form reveal" onSubmit={onSubmit}>
-            <h3>Envie sua mensagem</h3>
-            <div className="row2">
-              <div className="field">
-                <label>Nome</label>
-                <input placeholder="Seu nome completo" />
-              </div>
-              <div className="field">
-                <label>Telefone</label>
-                <input placeholder="(11) 9 0000-0000" />
-              </div>
-            </div>
-            <div className="field">
-              <label>E-mail</label>
-              <input type="email" placeholder="seuemail@email.com" />
-            </div>
-            <div className="field">
-              <label>Área</label>
-              <select>
-                <option>Trabalhista</option>
-                <option>Previdenciário</option>
-                <option>Civil</option>
-                <option>Não tenho certeza</option>
-              </select>
-            </div>
-            <div className="field">
-              <label>Como podemos ajudar?</label>
-              <textarea rows="4" placeholder="Descreva brevemente seu caso. Tudo o que você compartilhar é confidencial."></textarea>
-            </div>
-            <button className="btn btn-accent" type="submit" disabled={sent}>
-              {sent ? "Mensagem enviada ✓" : "Enviar mensagem"}
-            </button>
-            <p className="form-note">
-              Ao enviar, você concorda com nossa política de privacidade. Suas informações são confidenciais.
+
+        <div className="contact-channels reveal">
+          <div className="channel">
+            <p className="channel-label">Endereço</p>
+            <p className="channel-value">
+              Avenida Vitorio Baradel, 445<br />
+              Jundiaí — SP
             </p>
-          </form>
+          </div>
+          <div className="channel">
+            <p className="channel-label">E-mail</p>
+            <p className="channel-value">
+              <a href={"mailto:" + EMAIL}>{EMAIL}</a>
+            </p>
+          </div>
+          <div className="channel">
+            <p className="channel-label">Horário</p>
+            <p className="channel-value">
+              Segunda a sexta<br />
+              9h às 18h
+            </p>
+          </div>
+          <div className="channel">
+            <p className="channel-label">OAB</p>
+            <p className="channel-value">OAB/SP 385.279</p>
+          </div>
         </div>
+
+        <p className="contact-national reveal">
+          <strong>Atendimento online em todo o Brasil</strong>
+          <span> — clientes de qualquer cidade são atendidos por videochamada com a mesma proximidade do presencial.</span>
+        </p>
       </div>
     </section>
   );
