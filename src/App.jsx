@@ -291,7 +291,7 @@ function Blog() {
 
 function Location() {
   const mapSrc =
-    "https://www.openstreetmap.org/export/embed.html?bbox=-46.8985%2C-23.1965%2C-46.8845%2C-23.1855&layer=mapnik&marker=-23.191%2C-46.8915";
+    "https://www.google.com/maps?q=Avenida%20Vitorio%20Baradel%2C%20445%2C%20Jundia%C3%AD%20-%20SP%2C%20Brasil&output=embed&z=16";
   return (
     <section className="section" id="localizacao">
       <div className="container">
