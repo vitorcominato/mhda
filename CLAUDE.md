@@ -42,4 +42,9 @@ Three layers, each with one job:
 
 ## Deployment
 
-GitHub: `vitorcominato/mhda` (public). Vercel auto-deploys `main`. To preview a branch, push it and Vercel will build a preview URL.
+- **Production URL**: https://mhda.adv.br (custom domain configured in Vercel)
+- **GitHub repo**: [`vitorcominato/mhda`](https://github.com/vitorcominato/mhda) (public)
+- **Vercel project**: `mhda` under team `vitorcominatos-projects`
+- **Branch alias**: `mhda-git-main-vitorcominatos-projects.vercel.app`
+
+Vercel auto-deploys on every push to `main`. Pushing any other branch produces a preview deployment with its own URL.
