@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { Icon } from "./icons.jsx";
 
 const WHATSAPP_URL =
-  "https://wa.me/5511996270946?text=Ol%C3%A1%2C%20vamos%20conversar%3F";
-const PHONE_DISPLAY = "(11) 99627-0946";
+  "https://wa.me/5511967075293?text=Ol%C3%A1%2C%20vamos%20conversar%3F";
+const WHATSAPP_HREF = "https://wa.me/5511967075293";
+const PHONE_DISPLAY = "(11) 96707-5293";
 const EMAIL = "minharrosabrina@gmail.com";
 
 function Header() {
@@ -13,7 +14,7 @@ function Header() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 12);
-      const ids = ["inicio", "areas", "diferenciais", "equipe", "blog", "contato"];
+      const ids = ["inicio", "areas", "diferenciais", "blog", "contato"];
       const y = window.scrollY + 140;
       let cur = "inicio";
       for (const id of ids) {
@@ -31,7 +32,6 @@ function Header() {
     ["inicio", "Início"],
     ["areas", "Áreas"],
     ["diferenciais", "Sobre"],
-    ["equipe", "Equipe"],
     ["blog", "Notícias"],
     ["contato", "Contato"],
   ];
@@ -39,7 +39,7 @@ function Header() {
   return (
     <header className={"site-header " + (scrolled ? "scrolled" : "")}>
       <a className="brand" href="#inicio">
-        <img src="/assets/logo-full-azul-tight.png" alt="MHDA Advocacia" />
+        <img src="/assets/logo-full-light-tight.png" alt="MHDA Advocacia" />
       </a>
       <nav>
         <ul>
@@ -53,8 +53,8 @@ function Header() {
         </ul>
       </nav>
       <a className="cta" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-        <Icon.whatsapp size={14} />
-        Vamos conversar
+        <Icon.whatsapp size={16} />
+        <span className="cta-label">Vamos conversar</span>
       </a>
     </header>
   );
@@ -65,9 +65,7 @@ function Hero() {
     <section className="hero" id="inicio">
       <div className="container">
         <div className="hero-eyebrow-row reveal">
-          <span>Advocacia para pessoa física</span>
-          <span className="vr"></span>
-          <span className="meta">Cível · Trabalhista · Previdenciário</span>
+          <span className="meta">Civil · Trabalhista · Previdenciário</span>
         </div>
         <h1 className="reveal">
           Defesa séria, no momento <em>em que você</em> mais precisa
@@ -78,13 +76,17 @@ function Hero() {
             Atuamos no que afeta a vida das pessoas — trabalho, família, aposentadoria — com a atenção integral de um advogado responsável, do primeiro contato à decisão final.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              Vamos conversar <Icon.arrow size={14} />
+            <a className="btn btn-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              <Icon.whatsapp size={18} />
+              Falar no WhatsApp
             </a>
             <a className="btn btn-ghost" href="#areas">
               Conhecer áreas →
             </a>
           </div>
+          <p className="hero-reply">
+            <span className="hero-reply-dot" /> Resposta em até 24 horas
+          </p>
         </div>
       </div>
     </section>
@@ -96,11 +98,13 @@ function BarBand() {
     <div className="bar-band">
       <div className="container">
         <div className="group">
-          <span>Cível</span>
+          <span>Civil</span>
           <span>Trabalhista</span>
           <span>Previdenciário</span>
         </div>
-        <span className="terra">Atendimento presencial e online</span>
+        <span className="terra highlight">
+          Atendimento em todo o Brasil — presencial e online
+        </span>
       </div>
     </div>
   );
@@ -109,7 +113,7 @@ function BarBand() {
 const AREAS = [
   {
     icon: Icon.scale,
-    title: "Direito Cível",
+    title: "Direito Civil",
     body: "Contratos, responsabilidade civil, indenizações, direito do consumidor e questões de família.",
   },
   {
@@ -120,7 +124,7 @@ const AREAS = [
   {
     icon: Icon.clock,
     title: "Direito Previdenciário",
-    body: "Aposentadoria por idade, tempo, invalidez, pensão por morte e revisão de benefícios do INSS.",
+    body: "Aposentadoria por idade, tempo e invalidez, salário maternidade, pensão por morte, planejamento previdenciário e revisão de benefícios do INSS.",
   },
 ];
 
@@ -156,7 +160,7 @@ const PILLARS = [
   { n: "01", title: "Atenção integral", body: "Você fala diretamente com o advogado responsável pelo seu caso, do primeiro contato ao desfecho." },
   { n: "02", title: "Linguagem que se entende", body: "Sem juridiquês desnecessário. Explicamos o passo a passo, os prazos e o que esperar de cada decisão." },
   { n: "03", title: "Honorários claros", body: "Tudo combinado por escrito antes de começar. Sem taxas surpresa, sem cobranças inesperadas." },
-  { n: "04", title: "Atendimento próximo", body: "Presencial em Jundiaí ou por videochamada — onde for melhor para você. Resposta em até um dia útil." },
+  { n: "04", title: "Atendimento próximo", body: "Presencial em Jundiaí ou por videochamada — onde for melhor para você. Resposta em até 24 horas." },
 ];
 
 function Pillars() {
@@ -165,9 +169,9 @@ function Pillars() {
       <div className="container">
         <div className="section-head reveal">
           <p className="eyebrow">Por que MHDA</p>
-          <h2>Um escritório pequeno, dedicado a poucos casos por vez.</h2>
+          <h2>Um escritório com excelência técnica e atendimento humanizado.</h2>
           <p>
-            A MHDA foi pensada para o cliente individual — o trabalhador, o aposentado, a família que precisa resolver uma questão importante. Acreditamos que advocacia se faz com tempo e atenção, não em escala.
+            Cada caso recebe a mesma atenção: análise técnica rigorosa, comunicação direta com o cliente e acompanhamento próximo do início ao fim.
           </p>
         </div>
         <div className="pillars-grid reveal">
@@ -226,41 +230,6 @@ function Testimonials() {
   );
 }
 
-function Team() {
-  return (
-    <section className="section" id="equipe">
-      <div className="container">
-        <div className="section-head reveal">
-          <p className="eyebrow">Advogada responsável</p>
-          <h2>Quem responde pelo seu caso.</h2>
-          <p>
-            Atendimento direto, sem intermediários. Você sabe o nome, o e-mail e o telefone de quem cuida do seu processo do início ao fim.
-          </p>
-        </div>
-        <div className="team-solo reveal">
-          <div className="team-photo">
-            <div className="ph">SM</div>
-          </div>
-          <div className="team-bio">
-            <h4>Sabrina Minharro de Amorim</h4>
-            <p className="role">Advogada responsável · Cível, Trabalhista e Previdenciário</p>
-            <p className="oab">OAB/SP 385.279</p>
-            <p className="bio">
-              Sabrina atua no atendimento direto a pessoas físicas, com prática consolidada nas três áreas de atuação do escritório. Conduz pessoalmente cada caso — do primeiro contato à decisão final — privilegiando linguagem clara, prazos honestos e um trato próximo com o cliente.
-            </p>
-            <p className="bio">Atende presencialmente em Jundiaí e por videochamada para clientes de outras cidades.</p>
-            <div className="team-contact">
-              <a href="https://wa.me/5511996270946">{PHONE_DISPLAY}</a>
-              <span className="sep">·</span>
-              <a href={"mailto:" + EMAIL}>{EMAIL}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 const POSTS = [
   {
     area: "Previdenciário",
@@ -279,7 +248,7 @@ const POSTS = [
     excerpt: "Nem toda proposta da empresa é desvantajosa — mas há armadilhas comuns que custam caro depois.",
   },
   {
-    area: "Cível",
+    area: "Civil",
     date: "21 mar 2026",
     cover: "cover-3",
     glyph: Icon.book,
@@ -328,9 +297,9 @@ function Location() {
       <div className="container">
         <div className="section-head reveal">
           <p className="eyebrow">Localização</p>
-          <h2>Onde nos encontrar.</h2>
+          <h2>Atuação nacional, com escritório em Jundiaí.</h2>
           <p>
-            Atendimento presencial em Jundiaí, com agenda marcada. Para clientes de outras cidades, oferecemos atendimento por videochamada.
+            Atendimento presencial em Jundiaí com agenda marcada e <strong>atuação em todo o Brasil por videochamada</strong>. A mesma proximidade e cuidado, em qualquer cidade.
           </p>
         </div>
         <div className="location-grid">
@@ -341,15 +310,17 @@ function Location() {
                 Avenida Vitorio Baradel, 445<br />
                 Jundiaí — SP
               </dd>
+              <dt>Atendimento online</dt>
+              <dd><strong>Em todo o Brasil, por videochamada</strong></dd>
               <dt>Telefone / WhatsApp</dt>
               <dd>
-                <a href="https://wa.me/5511996270946">{PHONE_DISPLAY}</a>
+                <a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a>
               </dd>
               <dt>E-mail</dt>
               <dd>
                 <a href={"mailto:" + EMAIL}>{EMAIL}</a>
               </dd>
-              <dt>Atendimento</dt>
+              <dt>Horário</dt>
               <dd>
                 Segunda a sexta, 9h às 18h<br />
                 <span className="small">Sábados sob agendamento prévio</span>
@@ -387,10 +358,14 @@ function Contact() {
       <div className="container">
         <div className="section-head reveal">
           <p className="eyebrow">Contato</p>
-          <h2>A primeira consulta é sem compromisso.</h2>
-          <p style={{ color: "rgba(244,241,235,0.7)" }}>
-            Conte rapidamente o seu caso. Respondemos em até um dia útil — pessoalmente, por telefone ou por videochamada.
+          <h2>Resposta em até 24 horas.</h2>
+          <p style={{ color: "rgba(244,241,235,0.75)" }}>
+            Conte rapidamente o seu caso pelo WhatsApp ou pelo formulário abaixo. Garantimos retorno em até 24 horas — pessoalmente, por telefone ou por videochamada.
           </p>
+          <a className="btn btn-whatsapp btn-whatsapp-big" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <Icon.whatsapp size={22} />
+            Falar agora pelo WhatsApp
+          </a>
         </div>
         <div className="contact-grid">
           <div className="contact-info reveal">
@@ -400,15 +375,17 @@ function Contact() {
                 Avenida Vitorio Baradel, 445<br />
                 Jundiaí — SP
               </dd>
+              <dt>Atendimento online</dt>
+              <dd>Em todo o Brasil, por videochamada</dd>
               <dt>WhatsApp</dt>
               <dd>
-                <a href="https://wa.me/5511996270946">{PHONE_DISPLAY}</a>
+                <a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a>
               </dd>
               <dt>E-mail</dt>
               <dd>
                 <a href={"mailto:" + EMAIL}>{EMAIL}</a>
               </dd>
-              <dt>Atendimento</dt>
+              <dt>Horário</dt>
               <dd>Segunda a sexta, 9h às 18h</dd>
               <dt>OAB</dt>
               <dd>OAB/SP 385.279</dd>
@@ -435,7 +412,7 @@ function Contact() {
               <select>
                 <option>Trabalhista</option>
                 <option>Previdenciário</option>
-                <option>Cível</option>
+                <option>Civil</option>
                 <option>Não tenho certeza</option>
               </select>
             </div>
@@ -464,13 +441,13 @@ function Footer() {
           <div className="footer-brand">
             <img src="/assets/logo-full-light-tight.png" alt="MHDA Advocacia" />
             <p>
-              Advocacia para pessoas, não para processos. Atuação em direito cível, trabalhista e previdenciário.
+              Advocacia para pessoas, não para processos. Atuação em direito civil, trabalhista e previdenciário em todo o Brasil.
             </p>
           </div>
           <div className="footer-col">
             <h5>Áreas</h5>
             <ul>
-              <li><a href="#areas">Cível</a></li>
+              <li><a href="#areas">Civil</a></li>
               <li><a href="#areas">Trabalhista</a></li>
               <li><a href="#areas">Previdenciário</a></li>
             </ul>
@@ -479,7 +456,6 @@ function Footer() {
             <h5>Escritório</h5>
             <ul>
               <li><a href="#diferenciais">Sobre</a></li>
-              <li><a href="#equipe">Equipe</a></li>
               <li><a href="#blog">Notícias</a></li>
               <li><a href="#localizacao">Localização</a></li>
             </ul>
@@ -487,7 +463,7 @@ function Footer() {
           <div className="footer-col">
             <h5>Contato</h5>
             <ul>
-              <li><a href="https://wa.me/5511996270946">{PHONE_DISPLAY}</a></li>
+              <li><a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a></li>
               <li><a href={"mailto:" + EMAIL}>{EMAIL}</a></li>
               <li><a>Av. Vitorio Baradel, 445 — Jundiaí/SP</a></li>
             </ul>
@@ -511,10 +487,15 @@ function WhatsAppFAB() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Conversar pelo WhatsApp"
+      aria-label="Conversar pelo WhatsApp — resposta em até 24 horas"
     >
-      <Icon.whatsapp size={22} />
-      <span className="label">Vamos conversar</span>
+      <span className="wa-fab-icon">
+        <Icon.whatsapp size={30} />
+      </span>
+      <span className="wa-fab-text">
+        <span className="wa-fab-strong">Vamos conversar</span>
+        <span className="wa-fab-sub">Resposta em até 24h</span>
+      </span>
     </a>
   );
 }
@@ -553,7 +534,6 @@ export default function App() {
       <Pillars />
       <Quote />
       <Testimonials />
-      <Team />
       <Blog />
       <Location />
       <Contact />
