@@ -361,7 +361,6 @@ function Contact() {
             Falar com um advogado
           </a>
           <p className="contact-phone">
-            <span className="hero-reply-dot" />
             <a href={WHATSAPP_HREF}>{PHONE_DISPLAY}</a>
           </p>
         </div>

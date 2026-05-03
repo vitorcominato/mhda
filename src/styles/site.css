@@ -195,17 +195,6 @@ img { display: block; max-width: 100%; }
   display: flex; gap: 12px; align-items: center; justify-self: end;
   flex-wrap: wrap;
 }
-.hero-reply-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: #25D366;
-  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.18);
-  animation: wa-dot-pulse 1.6s ease-in-out infinite;
-}
-@keyframes wa-dot-pulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.18); }
-  50% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0.05); }
-}
-
 /* ---------- BAR BAND ---------- */
 .bar-band {
   background: var(--navy-800); color: var(--paper);
